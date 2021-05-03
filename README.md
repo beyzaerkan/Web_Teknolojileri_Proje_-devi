@@ -14,7 +14,7 @@ Derste öğrenilen bilgiler kullanılarak hazırlanacak kendimle ve yaşadığı
 - ##### Özgeçmiş Sayfası
      Eğitim bilgilerimi içeren CV niteliğindeki sayfa.
 - ##### Şehrim Sayfası
-     Yaşadığım şehir olan Trabzonla ilgili bilgilerin (nüfus, tarihi bilgiler, gezilebilecek yerler, kültür, coğrafya) ve en az 4 resimden oluşan slider içeren sayfa.
+     Yaşadığım şehir olan Trabzonla ilgili bilgilerin olduğu (nüfus, tarihi bilgiler, gezilebilecek yerler, kültür, coğrafya) ve en az 4 resimden oluşan slider içeren sayfa.
 - ##### Mirasımız Sayfası
      Trabzon'a ait kültürel mirasın tanıtıldığı sayfa.
 - ##### İlgi Alanlarım
