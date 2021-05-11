@@ -8,7 +8,8 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -53,80 +54,106 @@
 			</div>
 		</div>
 	</nav>
-	<div class="container">
-		<div class="bg-info text-white text-center py-2 mt-5">
-			<h2>İletişim Sayfası</h2>
-		</div>
-		<div class="row">
-			<div class="col-md-6 col-sm-12">
-				<div>
-					<iframe
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d391768.355431781!2d32.48257158608294!3d39.90356622124967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d347d520732db1%3A0xbdc57b0c0842b8d!2sAnkara%2C+T%C3%BCrkiye!5e0!3m2!1str!2sus!4v1556530231994!5m2!1str!2sus"
-						width="100%" height="435" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+	<form class="container py-5" id="contact-form" method="POST"  name="Form" action="iletisim.php" onsubmit="return bosMu(), gecerliMi()" role="form">
+		<div class="controls">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="form_name">Ad *</label>
+						<input id="form_name" type="text" name="isim" class="form-control" placeholder="Lütfen isminizi giriniz *">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="form_lastname">Soyad *</label>
+						<input id="form_lastname" type="text" name="soyisim" class="form-control"
+							placeholder="Lütfen soyisminizi giriniz *" >
+					</div>
 				</div>
 			</div>
-			<div class="col-md-6 col-sm-12">
-				<form action="" method="">
-					<div class="card mt-4">
-						<div class="card-body p-3">
-							<div class="form-group">
-								<div class="input-group mb-2">
-									<div class="input-group-prepend">
-										<div class="input-group-text">
-											<i class="fa fa-user text-info"></i>
-										</div>
-									</div>
-									<input type="text" class="form-control" name="" placeholder="Ad Soyad" required>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="input-group mb-2">
-									<div class="input-group-prepend">
-										<div class="input-group-text">
-											<i class="fa fa-envelope text-info"></i>
-										</div>
-									</div>
-									<input type="email" class="form-control" name="" placeholder="E-Posta" required>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="input-group mb-2">
-									<div class="input-group-prepend">
-										<div class="input-group-text">
-											<i class="fa fa-tag text-info"></i>
-										</div>
-									</div>
-									<input type="text" class="form-control" name="" placeholder="Konu" required>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="input-group mb-2">
-									<div class="input-group-prepend">
-										<div class="input-group-text">
-											<i class="fa fa-comment text-info"></i>
-										</div>
-									</div>
-									<textarea class="form-control" placeholder="Lütfen Mesajınızı Buraya Yazın.."
-										rows="6" required></textarea>
-								</div>
-							</div>
-							<div class="text-center">
-								<input type="submit" value="GÖNDER" class="btn btn-info btn-block">
-							</div>
-						</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="form_email">Email *</label>
+						<input id="form_email" type="text" name="email" class="form-control"
+							placeholder="Mail adresinizi giriniz *">
 					</div>
-				</form>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="form_need">Lütfen iletişim sebebinizi belirtin *</label>
+						<select id="form_need" name="sebep" class="form-control" >
+							<option value=""></option>
+							<option value="İstek">İstek</option>
+							<option value="Öneri">Öneri</option>
+							<option value="Şikayet">Şikayet</option>
+							<option value="Diğer">Diğer</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<span >Cinsiyet</span>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="cinsiyet" id="radio1" value="Kadın" checked>
+						<label class="form-check-label" for="radio1">
+							Kadın
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="cinsiyet" id="radio2" value="Erkek">
+						<label class="form-check-label" for="radio2">
+							Erkek
+						</label>
+					</div>					
+				</div>
+				<div class="col-md-6">
+					<span>Bizi nereden buldunuz?</span>
+					<div class="form-check">
+						<input class="form-check-input" name="secim[]" type="checkbox" value="Sosyal medya">Sosyal Medya
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" name="secim[]" type="checkbox" value="Reklam"  >Reklam
+		
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" name="secim[]" type="checkbox" value="Öneri">Arkadaş önerisi	
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" name="secim[]" type="checkbox" value="Diğer">Diğer		
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="form_message">Mesaj *</label>
+						<textarea id="form_message" name="mesaj" class="form-control" placeholder="Mesajınız *" rows="4"></textarea>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<input type="reset" class="btn btn-danger" value="Temizle">
+					<input type="submit" class="btn btn-success " value="Gönder">
+				</div>
 			</div>
 		</div>
-	</div>
+	</form>
 
-	
+
+
+
+
 	<footer class="footer-basic">
 		<div class="social">
 			<a href="https://www.instagram.com/beyza_erkann/" target="_blank"><i class="fab fa-instagram"></i></a>
-			<a href="https://www.youtube.com/channel/UC6Ld2lO7ly46NhSVXVFvONQ/featured" target="_blank"><i class="fab fa-youtube"></i></i></a>
+			<a href="https://www.youtube.com/channel/UC6Ld2lO7ly46NhSVXVFvONQ/featured" target="_blank"><i
+					class="fab fa-youtube"></i></i></a>
 			<a href="https://github.com/beyzaerkan" target="_blank"><i class="fab fa-github"></i></a>
-			<a href="https://www.linkedin.com/in/beyza-erkan-0006171b6/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+			<a href="https://www.linkedin.com/in/beyza-erkan-0006171b6/" target="_blank"><i
+					class="fab fa-linkedin-in"></i></a>
 		</div>
 		<ul class="list-inline">
 			<li class="list-inline-item"><a href="index.html">Hakkımda</a></li>
@@ -141,7 +168,38 @@
 	</footer>
 </body>
 
+<script>
+	
+	function bosMu() {
+		var isim = document.forms["Form"]["isim"].value;
+		var soyisim = document.forms["Form"]["soyisim"].value;
+		var email = document.forms["Form"]["email"].value;
+		var sebep = document.forms["Form"]["sebep"].value;
+		var cinsiyet = document.forms["Form"]["cinsiyet"].value;
+		var secim = document.forms["Form"]["secim[]"].value;
+		var mesaj = document.forms["Form"]["mesaj"].value;
+		if (isim == null || isim == "", soyisim == null || soyisim == "", email == null || email == "", sebep == null || sebep == "" , cinsiyet == null || cinsiyet == "" , secim == null || secim == "" , mesaj == null || mesaj == "") {
+			alert("Tüm alanlar dolu olmalıdır!");
+			return false;
+		}
+		return true;
+	}
 
+	function gecerliMi() {
+		var email = document.forms["Form"]["email"].value;
+		var atpos=email.indexOf("@");
+    var dotpos=email.lastIndexOf(".");
+		if ( atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length )
+    {
+        alert("Lütfen geçerli bir mail adresi girin...");
+        return false;
+    }     
+    else
+    {
+        return true;
+    }   
+	}
 
+</script>
 
 </html>
