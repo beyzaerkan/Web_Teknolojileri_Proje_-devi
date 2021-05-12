@@ -55,7 +55,7 @@
 		</div>
 	</nav>
 
-	<form class="container py-5" id="contact-form" method="POST"  name="Form" action="iletisim.php" onsubmit="return bosMu(), gecerliMi()" role="form">
+	<form class="container py-5" id="contact-form" method="POST"  name="Form" action="iletisim.php" onsubmit="return dogruMu()" role="form">
 		<div class="controls">
 			<div class="row">
 				<div class="col-md-6">
@@ -97,7 +97,7 @@
 				<div class="col-md-6">
 					<span >Cinsiyet</span>
 					<div class="form-check">
-						<input class="form-check-input" type="radio" name="cinsiyet" id="radio1" value="Kadın" checked>
+						<input class="form-check-input" type="radio" name="cinsiyet" id="radio1" value="Kadın">
 						<label class="form-check-label" for="radio1">
 							Kadın
 						</label>
@@ -170,7 +170,7 @@
 
 <script>
 	
-	function bosMu() {
+	function dogruMu() {
 		var isim = document.forms["Form"]["isim"].value;
 		var soyisim = document.forms["Form"]["soyisim"].value;
 		var email = document.forms["Form"]["email"].value;
@@ -178,23 +178,19 @@
 		var cinsiyet = document.forms["Form"]["cinsiyet"].value;
 		var secim = document.forms["Form"]["secim[]"].value;
 		var mesaj = document.forms["Form"]["mesaj"].value;
-		if (isim == null || isim == "", soyisim == null || soyisim == "", email == null || email == "", sebep == null || sebep == "" , cinsiyet == null || cinsiyet == "" , secim == null || secim == "" , mesaj == null || mesaj == "") {
+		var atpos=email.indexOf("@");
+    var dotpos=email.lastIndexOf(".");
+		if (isim == null || isim == "", soyisim == null || soyisim == "", email == null || email == "", sebep == null || sebep == "" , cinsiyet == null || cinsiyet == "" , secim == null || secim == "" , mesaj == null || mesaj == "")
+		 {
 			alert("Tüm alanlar dolu olmalıdır!");
 			return false;
 		}
-		return true;
-	}
-
-	function gecerliMi() {
-		var email = document.forms["Form"]["email"].value;
-		var atpos=email.indexOf("@");
-    var dotpos=email.lastIndexOf(".");
-		if ( atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length )
+		else if ( atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length )
     {
         alert("Lütfen geçerli bir mail adresi girin...");
         return false;
     }     
-    else
+		else
     {
         return true;
     }   
