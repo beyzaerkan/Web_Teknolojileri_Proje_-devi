@@ -138,3 +138,11 @@ list-style: none;
 #galeri{
   background-color: #586972;
 }
+.topluluklar{
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+.mdio{
+  padding-left: 3px;
+}
