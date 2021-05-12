@@ -5,8 +5,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Giriş Yap</title>
-	<link rel="stylesheet" href="css/style.css">
+	<title>Document</title>
+	<link rel="stylesheet" href="../Web_Teknolojileri_Proje_Odevi/style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
 		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -56,28 +56,23 @@
 	</nav>
 
   <div class="container py-5">
-    <form name="loginform" class="loginform" action="login.php" Method="POST" onsubmit="return  gecerliMi()">
-      <div class="form-group">
-        <label for="form_email">Email </label>
-        <input id="form_email" type="text" name="mail" class="form-control"
-          placeholder="Mail adresinizi giriniz ">
-        <small id="emailHelp" class="form-text text-muted">Girdiğiniz mailin @ içerdiğine emin olun.</small>
+    <div class="row">
+      <div class="col loginMesaj">
+    <?php if($_POST["mail"]=="beyzaerkan2@gmail.com" && $_POST["sifre"]=="b201210038")
+			{
+        echo"Hoşgeldiniz ".$_POST["mail"];
+        echo"<br>Girişiniz onaylandı.";
+      }
+      else{
+        echo "Girdiğiniz e-posta veya şifre hatalı.";
+        header("refresh:3; login.html");
+      }    
+        ?>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Şifre</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" name="sifre" placeholder="Şifrenizi giriniz">
-      </div>
-      <button type="submit" class="btn btn-primary">Giriş Yap</button>
-    </form>
-  </div>
+    </div>
 
-
-
-
-	
-
-
-	<footer class="footer-basic ">
+	<footer class="footer-basic">
 		<div class="social">
 			<a href="https://www.instagram.com/beyza_erkann/" target="_blank"><i class="fab fa-instagram"></i></a>
 			<a href="https://www.youtube.com/channel/UC6Ld2lO7ly46NhSVXVFvONQ/featured" target="_blank"><i class="fab fa-youtube"></i></i></a>
@@ -98,25 +93,5 @@
 
 </body>
 
-<script>  
- 
-  function gecerliMi(){  
-  var mail=document.loginform.mail.value;  
-  var sifre=document.loginform.sifre.value; 
-  var atpos=mail.indexOf("@");
-  var dotpos=mail.lastIndexOf("."); 
-
-  if (mail==null || mail=="", sifre==null || sifre==""){  
-    alert("Tüm alanlar dolu olmalıdır!");  
-    return false;  
-  }
-  else if ( atpos<1 || dotpos<atpos+2 || dotpos+2>=mail.length )
-  {
-      alert("Lütfen mail adresine bir @ işareti ekleyin.");
-      return false;
-  }     
-  return true;
-}  
-  </script> 
-
 </html>
+
