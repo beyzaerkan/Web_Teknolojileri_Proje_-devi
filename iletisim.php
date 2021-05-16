@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>BEYZA ERKAN</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -26,35 +26,35 @@
 	  </button>
 	  <div class="collapse navbar-collapse" id="navbarResponsive">
 		<ul class="navbar-nav ml-auto">
-		  <li class="nav-item active">
-			<a class="nav-link" href="index.html">Hakkımda</a>
-			<span class="sr-only">(current)</span>
+		  <li class="nav-item ">
+			<a class="nav-link" href="../index.html">Hakkımda</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="ozgecmis.html">Özgeçmiş</a>
+			<a class="nav-link" href="../ozgecmis.html">Özgeçmiş</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="ilgialanlarım.html">İlgi Alanlarım</a>
+			<a class="nav-link" href="../ilgialanlarım.html">İlgi Alanlarım</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="sehrim.html">Şehrim
+			<a class="nav-link" href="../sehrim.html">Şehrim
 			</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="mirasımız.html">Mirasımız</a>
+			<a class="nav-link" href="../mirasımız.html">Mirasımız</a>
+		  </li>
+		  <li class="nav-item active">
+			<a class="nav-link" href="../iletisim.html">İletişim</a>
+			<span class="sr-only">(current)</span>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="iletisim.html">İletişim</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="login.html">Login</a>
+			<a class="nav-link" href="../login.html">Login</a>
 		  </li>
 		</ul>
 	  </div>
 	</div>
   </nav>
 
-  <table class="table container ">
+  <table class="table container " id="form">
 		<thead>
 			<tr>
 				<th scope="col">Bilgiler</th>
@@ -71,7 +71,7 @@
 				<td><?php echo $_POST["soyisim"]?></td>
 			</tr>
 			<tr>
-				<th scope="row">email</th>
+				<th scope="row">Email</th>
 				<td><?php echo $_POST["email"]?></td>
 			</tr>
 			<tr>
@@ -79,12 +79,12 @@
 				<td><?php echo $_POST["cinsiyet"]?></td>
 			</tr>
 			<tr>
-				<th scope="row">Mesaj Gönderilme sebebi</th>
+				<th scope="row">Mesaj Gönderilme Sebebi</th>
 				<td><?php echo $_POST["sebep"]?></td>
 			</tr>
       <tr>
-				<th scope="row">Seçim</th>
-				<?php $amaclar=$_POST['secim']; foreach($amaclar as $amac){echo" ".$amac.",";}?>
+				<th scope="row">Bizi Nereden Buldunuz?</th>
+				<td><?php $secimler=$_POST['secim']; foreach($secimler as $secim){echo" ".$secim;}?></td>
 			</tr>
 			<tr>
 				<th scope="row">Mesaj</th>
