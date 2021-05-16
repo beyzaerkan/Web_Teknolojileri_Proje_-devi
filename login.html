@@ -10,9 +10,6 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
 		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -48,41 +45,43 @@
 					</li>
 					<li class="nav-item active">
 						<a class="nav-link" href="login.html">Login</a>
-            <span class="sr-only">(current)</span>
+						<span class="sr-only">(current)</span>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 
-  <div class="container py-5">
-    <form name="loginform" class="loginform" action="login.php" Method="POST" onsubmit="return  gecerliMi()">
-      <div class="form-group">
-        <label for="form_email">Email </label>
-        <input id="form_email" type="text" name="mail" class="form-control"
-          placeholder="Mail adresinizi giriniz ">
-        <small id="emailHelp" class="form-text text-muted">Girdiğiniz mailin @ içerdiğine emin olun.</small>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Şifre</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" name="sifre" placeholder="Şifrenizi giriniz">
-      </div>
-      <button type="submit" class="btn btn-primary">Giriş Yap</button>
-    </form>
-  </div>
+	<div class="container py-5">
+		<form name="loginform" class="loginform" action="login.php" Method="POST" onsubmit="return  gecerliMi()">
+			<div class="form-group">
+				<label for="form_email">Email </label>
+				<input id="form_email" type="text" name="mail" class="form-control" placeholder="Mail adresinizi giriniz ">
+				<small id="emailHelp" class="form-text text-muted">Girdiğiniz mailin @ içerdiğine emin olun.</small>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Şifre</label>
+				<input type="password" class="form-control" id="exampleInputPassword1" name="sifre"
+					placeholder="Şifrenizi giriniz">
+			</div>
+			<button type="submit" class="btn btn-primary">Giriş Yap</button>
+		</form>
+	</div>
 
 
 
 
-	
+
 
 
 	<footer class="footer-basic ">
 		<div class="social">
 			<a href="https://www.instagram.com/beyza_erkann/" target="_blank"><i class="fab fa-instagram"></i></a>
-			<a href="https://www.youtube.com/channel/UC6Ld2lO7ly46NhSVXVFvONQ/featured" target="_blank"><i class="fab fa-youtube"></i></i></a>
+			<a href="https://www.youtube.com/channel/UC6Ld2lO7ly46NhSVXVFvONQ/featured" target="_blank"><i
+					class="fab fa-youtube"></i></i></a>
 			<a href="https://github.com/beyzaerkan" target="_blank"><i class="fab fa-github"></i></a>
-			<a href="https://www.linkedin.com/in/beyza-erkan-0006171b6/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+			<a href="https://www.linkedin.com/in/beyza-erkan-0006171b6/" target="_blank"><i
+					class="fab fa-linkedin-in"></i></a>
 		</div>
 		<ul class="list-inline">
 			<li class="list-inline-item"><a href="index.html">Hakkımda</a></li>
@@ -98,25 +97,25 @@
 
 </body>
 
-<script>  
- 
-  function gecerliMi(){  
-  var mail=document.loginform.mail.value;  
-  var sifre=document.loginform.sifre.value; 
-  var atpos=mail.indexOf("@");
-  var dotpos=mail.lastIndexOf("."); 
+<script>
+	function gecerliMi() {
+		var mail = document.loginform.mail.value;
+		var sifre = document.loginform.sifre.value;
+		var atpos = mail.indexOf("@");
+		var dotpos = mail.lastIndexOf(".");
 
-  if (mail==null || mail=="", sifre==null || sifre==""){  
-    alert("Tüm alanlar dolu olmalıdır!");  
-    return false;  
-  }
-  else if ( atpos<1 || dotpos<atpos+2 || dotpos+2>=mail.length )
-  {
-      alert("Lütfen mail adresine bir @ işareti ekleyin.");
-      return false;
-  }     
-  return true;
-}  
-  </script> 
+		if (mail == null || mail == "", sifre == null || sifre == "") {
+			alert("Tüm alanlar dolu olmalıdır!");
+			return false;
+		} else if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= mail.length) {
+			alert("Lütfen mail adresine bir @ işareti ekleyin.");
+			return false;
+		}
+		return true;
+	}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </html>
